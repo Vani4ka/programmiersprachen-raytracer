@@ -9,11 +9,19 @@ class Sphere : public Shape
 {
 public:
 	Sphere():
+	Shape(),
 	center_{0.0},
 	radius_{0.0}
 	{}
 
 	Sphere(glm::vec3 const& c, double r):
+	Shape(),
+	center_{c},
+	radius_{r}
+	{}
+
+	Sphere(glm::vec3 const& c, double r, Color const& col, std::string n):
+	Shape(col, n),
 	center_{c},
 	radius_{r}
 	{}

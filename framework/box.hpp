@@ -8,11 +8,19 @@ class Box : public Shape
 {
 public:
 	Box():
+	Shape(),
 	min_{0.0},
 	max_{0.0}
 	{}
 
 	Box(glm::vec3 const& mi, glm::vec3 const& ma):
+	Shape(),
+	min_{mi},
+	max_{ma}
+	{}
+
+	Box(glm::vec3 const& mi, glm::vec3 const& ma, Color const& col, std::string n):
+	Shape(col, n),
 	min_{mi},
 	max_{ma}
 	{}
